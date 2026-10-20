@@ -9,4 +9,9 @@ client  = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
 client.connect(("127.0.0.1", 5000))
 
 print("Connected to server at 127.0.0.1:5000")
-client.send(b"call of ssh is successfully underway!")
+client.send(b"hello from client!")  # Send a message to the server, encoding the string to bytes using UTF-8
+
+reply = client.recv(1024)
+print("server:", reply.decode('utf-8'))  # Decode the bytes to a string using UTF-8 encoding and print the received message
+
+    
