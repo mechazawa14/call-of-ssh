@@ -4,12 +4,13 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # creating a socket which is basically an endpoint for communication. AF_INET is the address family for IPv4 and SOCK_STREAM 
 # means it is a TCP socket, basically Create a TCP socket that works with IPv4.
 
-server_socket.bind(("127.0.0.1", 5000))
+# server_socket.bind(("127.0.0.1", 5000))
+server_socket.bind(("192.168.1.11", 5000)) #this is ip of another device in the same network, were trying same lan connection.
 
 
 server_socket.listen()
 
-print("Call of SSH listening on 127.0.0.1:5000...")
+print("Call of SSH listening on 192.168.1.11:5000...")
 
 connection, address = server_socket.accept()
 
